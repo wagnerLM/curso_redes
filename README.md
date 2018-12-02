@@ -3,5 +3,5 @@ Curso redes frequentistas PUCRS
 
 Passos:
 1) Abra seu RStudio
-2) Copie ecole o script
-3) Acompanhe os exemplos
+2) Copie e cole o script, ou abra o file "script redes frequentistas" via RStudio
+3) Acompanhe os exemplos (ctrl + enter) 
