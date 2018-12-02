@@ -7,7 +7,7 @@ library(qgraph)
 BFI_sub<-read.csv("https://raw.githubusercontent.com/wagnerLM/curso_redes/master/BFI_sub",sep = ";")
 View(BFI_sub)
 BFI_grupos <- rep(c('A','C','E','N','O'),each=5)
-BFI_groups
+BFI_grupos
 BFI_names <- scan("https://raw.githubusercontent.com/wagnerLM/curso_redes/master/BFI_names",what = "character", sep = "\n")
 BFI_names
 
@@ -77,9 +77,12 @@ qgraph(dass_g,groups=as.factor(dass_com$membership),palette="pastel")
 
 # Predicao autismo
 autism<-read.csv("https://raw.githubusercontent.com/wagnerLM/curso_redes/master/autism",sep= ";")
+View(autism)
 autism_names<-scan("https://raw.githubusercontent.com/wagnerLM/curso_redes/master/autism_names",what = "character",sep="\n")
-
+autism_names
+# modelo geral de predição
 autism_g<-qgraph(cor_auto(autism),layout="spring",sampleSize=nrow(autism),nodeNames=autism_names,labels=colnames(autism),edge.labels=T,tuning=0.5,legend.cex=0.3)
-
+# preditores de IiS
 flow(autism_g,"IiS")
+# preditores de SatTreat
 flow(autism_g,"SatTreat")
